@@ -5,15 +5,17 @@ import Filter from './components/Filter'
 import Notification from './components/Notification'
 import Gallery from './components/Gallery'
 
+{/* <Notification />
+<AnecdoteForm /> <br></br>
+<Filter />
+<AnecdoteList  /> */}
+
 const App = () => {
   return (
     <div>
-      <h2>Anecdotes</h2>
+      <h1>Welcome to Mike's Image Repository</h1>
       <Gallery />
-      <Notification />
-      <AnecdoteForm /> <br></br>
-      <Filter />
-      <AnecdoteList  />
+
     </div>
   )
 }

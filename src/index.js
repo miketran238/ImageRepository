@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import App from './App'
 import anecdoteReducer from './reducers/anecdoteReducer'
 import filterReducer from './reducers/filterReducer'
+import galleryReducer from './reducers/galleryReducer'
 import notificationReducer from './reducers/notificationReducer'
 
 // const store = createStore(anecdoteReducer)
@@ -18,6 +19,7 @@ import notificationReducer from './reducers/notificationReducer'
 // )
 
 const reducer = combineReducers({
+  images: galleryReducer,
   anecdotes: anecdoteReducer,
   filter: filterReducer,
   notification: notificationReducer
