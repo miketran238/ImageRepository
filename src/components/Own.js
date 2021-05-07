@@ -2,8 +2,9 @@ import Image from './Image'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { sell } from '../reducers/galleryReducer'
-// import { setNotification } from '../reducers/notificationReducer'
-// import { removeNotification } from '../reducers/notificationReducer'
+import { setNotification } from '../reducers/notificationReducer'
+import { removeNotification } from '../reducers/notificationReducer'
+import Notification from '../components/Notification'
 
 const Own = () => {
     const dispatch = useDispatch()
@@ -11,12 +12,12 @@ const Own = () => {
     return state.images.own
     })
 
-    const sellClick = (id) => {
+    const sellClick = (id, price) => {
     dispatch(sell(id))
-    // dispatch(setNotification(`You have just voted for '${content}'`))
-    // setTimeout(() => {
-    //   dispatch(removeNotification())
-    // }, 2000)
+    dispatch(setNotification(`You have just sold your image for $${price}`))
+    setTimeout(() => {
+      dispatch(removeNotification())
+    }, 1000)
     }
 
     if ( images.length === 0 ) {
@@ -29,6 +30,7 @@ const Own = () => {
     else {
         return (
             <>
+            <Notification />
             <table>
                 <thead>
                 <tr>
@@ -42,7 +44,7 @@ const Own = () => {
             {images.map(image =>
                 <tr key={image.id}>
                     <Image src= {image.src} quantity = {image.quantity} price = {image.price} thumbnail = {false}/>
-                    <th> <button onClick={() => sellClick(image.id)}> Sell </button> </th>
+                    <th> <button onClick={() => sellClick(image.id, image.price)}> Sell </button> </th>
                 </tr>
             )}
             </tbody>

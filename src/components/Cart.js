@@ -1,26 +1,13 @@
-// import React from 'react'
 import Image from './Image'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quant_down, purchase } from '../reducers/galleryReducer'
 
-// import { setNotification } from '../reducers/notificationReducer'
-// import { removeNotification } from '../reducers/notificationReducer'
-
-const Gallery = () => {
+const Cart = () => {
   const dispatch = useDispatch()
   const cart = useSelector(state => {
     return state.images.cart
   })
-
-//   const buyClick = (id) => {
-//     dispatch(buy(id))
-//     dispatch(setNotification(`You have just voted for '${content}'`))
-//     setTimeout(() => {
-//       dispatch(removeNotification())
-//     }, 2000)
-//   }
-
   const purchaseClick = (total) => {
       dispatch(purchase(total))
   }
@@ -38,7 +25,6 @@ const Gallery = () => {
   else {
     var total = 0
     cart.forEach(element => total += element.price * element.quantity)
-    console.log(total)
     return (
         <>
         <table>
@@ -67,4 +53,4 @@ const Gallery = () => {
   }
 
 }
-export default Gallery
+export default Cart
