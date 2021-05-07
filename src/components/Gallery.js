@@ -32,7 +32,7 @@ import { buy } from '../reducers/galleryReducer'
 const Gallery = () => {
   const dispatch = useDispatch()
   const images = useSelector(state => {
-    return state.images
+    return state.images.inventory
   })
 
   const buyClick = (id) => {
@@ -59,7 +59,7 @@ const Gallery = () => {
         <tbody>
      {images.map(image =>
         <tr key={image.id}>
-            <Image src= {image.src} quantity = {image.quantity} price = {image.price} />
+            <Image src= {image.src} quantity = {image.quantity} price = {image.price} thumbnail = {false}/>
             <th> <button onClick={() => buyClick(image.id)}> Buy </button> </th>
         </tr>
       )}
