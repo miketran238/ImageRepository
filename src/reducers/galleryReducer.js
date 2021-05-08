@@ -13,7 +13,9 @@ const galleryAtStart = {
     { id: 7, src: '/img/boston.jpeg', quantity: 3, price: 8 },
     { id: 8, src: '/img/moon.jpeg', quantity: 1, price: 12 },
     { id: 9, src: '/img/sunset.jpeg', quantity: 2, price: 15 },
-  ]
+  ],
+  total: 0,
+  discount: [5,10,15]
 }
 
 const galleryReducer = (state = galleryAtStart, action) => {
@@ -63,7 +65,8 @@ const galleryReducer = (state = galleryAtStart, action) => {
       const newState = {
         ...state,
         cart: newCart,
-        inventory: newInventory
+        inventory: newInventory,
+        total: state.total + imageToChange.price
       }
       return newState
     }
@@ -98,7 +101,8 @@ const galleryReducer = (state = galleryAtStart, action) => {
           ...state,
           cart: [],
           credit: newCredit,
-          own: newOwnPur
+          own: newOwnPur,
+          total: 0
         }
 
         window.alert('Purchase successfully')
@@ -143,7 +147,8 @@ const galleryReducer = (state = galleryAtStart, action) => {
       const newStateQuant = {
         ...state,
         cart: newCart,
-        inventory: newInventory
+        inventory: newInventory,
+        total: state.total - imageToChange.price
       }
       return newStateQuant
     
@@ -199,9 +204,31 @@ const galleryReducer = (state = galleryAtStart, action) => {
       }
       return newStateSell
     
-
+    case 'DISCOUNT':
+      const discountId = action.data.id
+      var newTotal
+      if ( state.discount[discountId] !== -1 ) {
+        newTotal = state.total * (100 - state.discount[discountId]) / 100
+      }
+      else {
+        newTotal = state.total
+      }
+      const newDiscount = [...state.discount]
+      newDiscount[discountId] = -1
+      return {
+        ...state,
+        discount: newDiscount,
+        total: newTotal
+      }
+      
     default:
       return state
+  }
+}
+export const discount = (id) => {
+  return {
+    type: 'DISCOUNT',
+    data: {id}
   }
 }
 

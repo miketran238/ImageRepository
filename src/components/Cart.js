@@ -2,11 +2,15 @@ import Image from './Image'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quant_down, purchase } from '../reducers/galleryReducer'
+import Discount from './Discount'
 
 const Cart = () => {
   const dispatch = useDispatch()
   const cart = useSelector(state => {
     return state.images.cart
+  })
+  const total = useSelector(state => {
+    return state.images.total
   })
   const purchaseClick = (total) => {
       dispatch(purchase(total))
@@ -23,8 +27,8 @@ const Cart = () => {
       )
   }
   else {
-    var total = 0
-    cart.forEach(element => total += element.price * element.quantity)
+    // var subTotal = 0
+    // cart.forEach(element => subTotal += element.price * element.quantity)
     return (
         <>
         <table>
@@ -45,8 +49,11 @@ const Cart = () => {
           )}
           </tbody>
         </table>
-        Total : ${total.toFixed(2)}
+        {/* SubTotal : ${subTotal.toFixed(2)}
         <br />
+        <Discount />
+        <br /> */}
+        Total : ${total.toFixed(2)} <br />
         <button onClick={() => purchaseClick(total)}> <b> Purchase </b> </button>
         </>
       )
