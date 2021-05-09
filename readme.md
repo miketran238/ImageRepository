@@ -1,4 +1,4 @@
-**Mike's Image Repository**
+Mike's Image Repository
 ========
 Hi, this is my project for the Shopify Coding challenge. <br />
 I tried to simulate an image repository with the core functionality to Buy/Sell images. <br />
