@@ -4,7 +4,7 @@ const Image = (props) => {
     if (props.thumbnail) {
         return (
             <>
-                <th><img src={props.src} alt="theImage" width="100" height ="60"></img></th>
+                <th><img src={props.src} alt="theImage" width="200" height ="140"></img></th>
                 <th> {props.quantity} </th>
                 <th> ${props.price} </th>
             </>
@@ -13,7 +13,7 @@ const Image = (props) => {
     else {
         return (
             <>
-                <th><img src={props.src} alt="theImage" width="250" height ="150"></img></th>
+                <th><img src={props.src} alt="theImage" width="350" height ="200"></img></th>
                 <th> {props.quantity} </th>
                 <th> ${props.price} </th>
             </>

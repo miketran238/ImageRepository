@@ -1,18 +1,18 @@
 export const galleryAtStart = {
   inventory: [
-    { id: 1, src: '/img/tunnel.jpg', quantity: 5, price: 5.5 },
-    { id: 2, src: '/img/park.jpg', quantity: 10, price: 3.99 },
-    { id: 3, src: '/img/bridge.jpg', quantity: 2, price: 10 },
-    { id: 4, src: '/img/coast.jpg', quantity: 5, price: 6 },
-    { id: 5, src: '/img/rails.jpg', quantity: 10, price: 2.5 },
-    { id: 6, src: '/img/sky.jpg', quantity: 20, price: 4.99 }
+    { id: 1, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/tunnel.jpg?raw=true', quantity: 5, price: 5.5 },
+    { id: 2, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/park.jpg?raw=true', quantity: 10, price: 3.99 },
+    { id: 3, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/bridge.jpg?raw=true', quantity: 2, price: 10 },
+    { id: 4, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/coast.jpg?raw=true', quantity: 5, price: 6 },
+    { id: 5, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/rails.jpg?raw=true', quantity: 10, price: 2.5 },
+    { id: 6, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/sky.jpg?raw=true', quantity: 20, price: 4.99 }
   ],
   cart: [],
   credit: 29.99,
   own: [
-    { id: 7, src: '/img/boston.jpeg', quantity: 3, price: 8 },
-    { id: 8, src: '/img/moon.jpeg', quantity: 1, price: 12 },
-    { id: 9, src: '/img/sunset.jpeg', quantity: 2, price: 15 },
+    { id: 7, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/boston.jpeg?raw=true', quantity: 3, price: 8 },
+    { id: 8, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/moon.jpeg?raw=true', quantity: 1, price: 12 },
+    { id: 9, src: 'https://github.com/miketran238/ImageRepository/blob/master/public/img/sunset.jpeg?raw=true', quantity: 2, price: 15 },
   ],
   total: 0,
   discount: [5,10,15]
