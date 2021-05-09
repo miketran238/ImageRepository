@@ -1,4 +1,4 @@
-const galleryAtStart = {
+export const galleryAtStart = {
   inventory: [
     { id: 1, src: '/img/tunnel.jpg', quantity: 5, price: 5.5 },
     { id: 2, src: '/img/park.jpg', quantity: 10, price: 3.99 },
